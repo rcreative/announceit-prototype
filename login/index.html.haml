@@ -1,0 +1,19 @@
+- @title = "Login" # if they are trying to access another page this should read "Please Login"
+
+%form{:action=>"/dashboard/", :method=>"post"}
+  - if flash[:error]
+    %p.message.error= flash[:error]
+  %fieldset.invisible
+    %p
+      %label{:for=>"username"} Username
+      %input.textbox.big{:name=>"username", :id=>"username", :type=>"text", :size=>30, :style=>"width: 490px"}/
+    %p
+      %label{:for=>"password"} Password
+      %input.textbox.big{:name=>"password", :id=>"password", :type=>"password", :size=>30, :style=>"width: 490px"}/
+    %p
+      %input.checkbox{:name=>"remember_me", :id=>"remember_me", :type=>"checkbox", :size=>"30", :value=>""}/
+      %label.checkbox{:for=>"remember_me"} Remember me on this computer
+  .buttons
+    %button{:type=>"submit"} Login
+    or
+    = link_to "Signup", "/signup/"

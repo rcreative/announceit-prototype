@@ -1,0 +1,43 @@
+- @selected = :subscribers
+- @title = "Subscribers"
+
+- @subscribers = ["Will Schaufler", "Jennifer Williams", "Adam Beard", "Alistar Taylor", "John Bleything", "Mark Robertson", "Brently Paul", "Brad Mathis", "Ben Palmer", "Charlene", "Chris", "Corey Randquist", "Colby Haines", "Danny Beach", "Ben Rostenne", "David OMelia", "Eddie", "Elizabeth", "Fred", "Gerald Farrell", "John W. Long", "Jonathan Lenfester", "Luke Eraham", "Mattieu Bass", "Todd Riffe", "Jeff Hale", "Matthew Reiner", "Nathaniel Kroon", "Rick Daigle", "Ryan Owens", "Ryan", "Stephanie", "SteveBarr", "Jim Cox"].sort.map { |name| subscriber_fixture(name) }
+
+- unless @subscribers.empty?
+  .index_head
+    .pagination
+      %a.prev_page{:href=>"/admin/subscribers?page=1", :rel=>"prev start"} &laquo; Prev
+      %a{:href=>"/admin/subscribers?page=1", :rel=>"prev start"} 1
+      %span.current 2
+      %a{:href=>"/admin/subscribers?page=3", :rel=>"next"} 3
+      %a{:href=>"/admin/subscribers?page=4"} 4
+      %a.next_page{:href=>"/admin/subscribers?page=3", :rel=>"next"} Next &raquo;
+    %p 25 of 84 subscribers
+  
+  %table.index#subscribers{:border=>0, :cellpadding=>0, :cellspacing=>0}
+    %tbody
+      - for subscriber in @subscribers
+        %tr[subscriber]
+          %td.avatar= image_tag gravatar_url(subscriber.email), :width => 32, :height => 32
+          %td.name_and_email
+            = name_and_email(subscriber.name, subscriber.email)
+          %td.actions= link_to "Unsubscribe", "/subscribers/delete/", :confirm => "Are you sure you want to unsubscribe #{subscriber.name? ? h(subscriber.name) : 'this person'}?"
+  
+  .index_foot
+    .pagination
+      %a.prev_page{:href=>"/admin/subscribers?page=1", :rel=>"prev start"} &laquo; Prev
+      %a{:href=>"/admin/subscribers?page=1", :rel=>"prev start"} 1
+      %span.current 2
+      %a{:href=>"/admin/subscribers?page=3", :rel=>"next"} 3
+      %a{:href=>"/admin/subscribers?page=4"} 4
+      %a.next_page{:href=>"/admin/subscribers?page=3", :rel=>"next"} Next &raquo;
+  
+  .download
+    %h3 Download:
+    %ul
+      %li= link_to "Email Addresses", :format => "txt"
+      %li= link_to "CSV", :format => "csv"
+- else
+  %p.message.info
+    %strong You don&#8217;t have any subscribers yet!
+    %em When you do, they&#8217;ll show up here.

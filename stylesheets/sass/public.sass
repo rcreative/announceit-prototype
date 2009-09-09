@@ -1,0 +1,99 @@
+@import _reset.sass
+@import _base.sass
+
+body
+  color: #ccc
+  background: #2e2e2e
+  text-align: center
+  text-shadow: 1px 1px 1px #2e2e2e
+a
+  color: #ddd
+  padding: 2px
+  &:hover
+    background: #242424
+    color: white
+
+h1, h2, h3, h4, h5, h6
+  color: #ffcf69
+  font-family: "Montara Std Gothic", "Trebuchet MS", "Lucida Grande", Verdana, Arial, sans-serif
+
+h1
+  font-size: 280%
+  margin: 1em 0
+
+#header
+  padding: 20px 0
+  a
+    background: none
+    border: none
+
+#content
+  background: #242424
+  width: 600px
+  margin: 0 auto
+  padding: 1px 2em
+  -webkit-border-radius: 25px
+
+form
+  fieldset
+    background: url(/images/fieldset_background.png) top center no-repeat
+    margin: 0 auto
+    padding: 10px 0 15px
+    text-align: left
+    width: 500px
+    &.invisible
+      background: none
+      padding: 0
+  p
+    margin: 1.5em 0
+    &.hint
+      margin-top: -1em
+  label
+    font-size: 140%
+    color: white
+    display: block
+    margin-bottom: 0.25em
+    &.inline, &.checkbox, &.radio
+      display: inline
+  .extended_checkbox_label
+    color: white
+    font-size: 140%
+  input
+    &.checkbox
+      font-size: 140%
+    &.textbox
+      background: white url(/images/textbox_background.png) top repeat-x
+      border: 1px solid #ccc
+      border-radius: 5px
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      padding: 5px
+      font-size: 180%
+      &:focus
+        background: white
+        outline: none
+  .set
+    margin: 1.5em 0 1.5em -2em
+    p
+      float: left
+      margin: 0 0 0 2em
+      &.right
+        float: right
+        margin-left: 0
+    overflow: hidden
+  .buttons
+    margin: 2em 0 3em
+    button
+      border: none
+      background: #111
+      border-radius: 5px
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      color: #e5e5e5
+      cursor: pointer
+      font-size: 200%
+      padding: 10px 40px
+      vertical-align: -10%
+      text-shadow: 1px 1px 1px #111
+      &:hover, &:focus
+        background: black

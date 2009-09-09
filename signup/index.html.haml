@@ -1,0 +1,45 @@
+- @title = "Signup!"
+
+%form{:action=>"/dashboard/", :method=>"post"}
+  - if errors_on? :account
+    %p.message.error Oops! There were errors while processing this form. Please correct them before continuing.
+  %fieldset
+    %p
+      %label{:for=>"name"} Name
+      %input.textbox{:name=>"name", :id=>"name", :type=>"text", :size=>"33", :style=>"width: 490px"}/
+    %p
+      %label{:for=>"email"} Email
+      %input.textbox{:name=>"email", :id=>"email", :type=>"text", :size=>"33", :style=>"width: 490px"}/
+  %fieldset
+    %p
+      %label{:for=>"username"} Username
+      %input.textbox{:name=>"username", :id=>"username", :type=>"text", :size=>"33", :style=>"width: 490px"}/
+    .set
+      %p
+        %label{:for=>"password"} Password
+        %input.textbox{:name=>"password", :id=>"password", :type=>"text", :size=>"15", :style=>"width: 225px"}/
+      %p.right
+        %label{:for=>"password_confirmation"} Retype Password
+        %input.textbox{:name=>"password_confirmation", :id=>"password_confirmation", :type=>"text", :size=>"15", :value=>"", :style=>"width: 225px"}/
+      .clear &nbsp;
+  %fieldset
+    %p
+      %label{:for=>"subdomain"} Subdomain
+      %input.textbox{:name=>"subdomain", :id=>"subdomain", :type=>"text", :size=>"33", :style=>"width: 490px"}/
+    %p.hint
+      Typing <big>&#8216;example&#8217;</big> will reserve
+      = "<big>&#8216;example.#{application_domain}&#8217;</big>"
+      for your teaser page. You will have the opportunity to setup a completely
+      custom domain name after signup.
+  %fieldset
+    %p
+      %input.checkbox{:name=>"agreement", :id=>"agreement", :type=>"checkbox"}/
+      %label.checkbox{:for=>"agreement"} I agree to the
+      %span.extended_checkbox_label
+        %a{:href=>"#"} Terms of Use
+        and
+        %a{:href=>"#"} Privacy Policy
+  .buttons
+    %button{:type=>"submit"} Signup
+    or
+    %a{:href=>"/login/"} Login

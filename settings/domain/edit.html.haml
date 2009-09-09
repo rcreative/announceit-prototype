@@ -1,0 +1,22 @@
+- @selected = :settings
+- @title = "Domain Settings"
+
+%form{:action=>"/settings/", :method=>"post"}
+  %h1 Domain Settings
+  
+  %fieldset
+    %p
+      %input.radio{:name=>"domain_type", :id=>"domain_type_subdomain", :type=>"radio", :checked=>true}/
+      %label.radio{:for=>"domain_type_subdomain"} Use a subdomain
+      %br/
+      %input.textbox.big{:name=>"subdomain", :id=>"subdomain", :type=>"textbox", :size=>18}/
+      = ".#{application_domain}"
+    %p
+      %input.radio{:name=>"domain_type", :id=>"domain_type_custom", :type=>"radio"}/
+      %label.radio{:for=>"domain_type_custom"} Use a custom domain
+      %br/
+      %input.textbox.big{:name=>"custom_domain", :id=>"custom_domain", :type=>"textbox", :size=>30}/
+  .buttons
+    %input.button{:type=>"submit", :value=>"Save Changes"}/
+    or
+    %a{:href=>"/settings/"} Cancel

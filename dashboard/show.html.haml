@@ -1,0 +1,34 @@
+- @selected = :dashboard
+- @title = "Dashboard"
+
+- content_for :meta do
+  %script{:src=>"/javascripts/swfobject.js", :type=>"text/javascript"}
+
+%p.message.info
+  %strong You must be new!
+  Configure your 
+  = link_to "teaser page", "/teaser/"
+  now.
+
+.box#statistics
+  .graph
+    = remote_graph("visitor_statistics", :route => "/dashboard/graph/")
+    %p.views
+      View:
+      %a.selected{:href=>"#"} Past 7 days
+      %span.separator= "|"
+      %a{:href=>"#"} Last 2 months
+      %span.separator= "|"
+      %a{:href=>"#"} All Time
+  %ul.large_statistics
+    %li
+      %big 230
+      unique visitors
+      %small since April 3, 2009
+    %li
+      %big 18
+      visitors today
+    %li
+      %a{:href=>"/subscribers/"}
+        %big 42
+        subscribers

@@ -1,0 +1,353 @@
+@import _reset.sass
+@import _base.sass
+@import _messages.sass
+@import _forms.sass
+
+#header
+  background: #666
+  padding: 15px 8px 8px
+  .applinks
+    color: #ccc
+    margin: -3px -2px 0
+    float: right
+    font-size: 90%
+    p.account
+      color: #ccc
+      display: inline
+      margin: 0
+      strong
+        color: #eee
+        font-weight: normal
+      a
+        color: #ddd
+        padding: 4px 0
+        &:hover
+          color: #fff
+          background-color: #777
+    ul
+      display: inline
+      margin-left: 0.6em
+      li
+        display: inline
+        padding: 2px 4px
+        border-left: 1px dashed #888
+        &:last-child
+          padding-right: 0
+      a
+        color: #ddd
+        margin-left: 0.4em
+        padding: 4px
+        text-decoration: none
+        strong
+          color: #eee
+          font-weight: normal
+        &:hover
+          color: white
+          background-color: #777
+          strong
+            color: white
+        &.view_teaser
+          background: #d60
+          color: #eee
+          padding: 6px 8px
+          margin-left: 4px
+          border-radius: 5px
+          -moz-border-radius: 5px
+          -webkit-border-radius: 5px
+          text-decoration: none
+          &:hover
+            background: #c30
+            color: white
+  #navigation
+    display: inline
+    text-align: left
+    a
+      color: #ccc
+      background: #777
+      padding: 8px 12px 8px
+      text-decoration: none
+      border-top-left-radius: 5px
+      -moz-border-top-left-radius: 5px
+      -webkit-border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      -moz-border-top-right-radius: 5px
+      -webkit-border-top-right-radius: 5px
+      &:hover
+        color: white
+        background: #999
+    ul
+      display: inline
+    li
+      display: inline
+      &.here
+        a
+          background: white
+          color: #333
+
+#content
+  padding: 10px 20px
+  .outset
+    margin: 0 -20px
+  span.url, span.email
+    color: #2285cc
+  h1
+    font-size: 180%
+  table.index
+    border-bottom: 1px solid #eee
+    text-align: left
+    width: 100%
+    th
+      background: #f0f0f0
+      color: #999
+      font-size: 80%
+      font-weight: normal
+      padding: 5px 2px 4px
+      letter-spacing: 0.1em
+      text-transform: uppercase
+    td
+      padding: 10px 20px 10px 0
+      border-top: 1px solid #eee
+      vertical-align: center
+      &.avatar
+        padding: 8px 10px 8px 0
+        width: 32px
+        img
+          vertical-align: middle
+          border: 1px solid #ddd
+          padding: 1px
+      &.name_and_email
+        color: #ccc
+        .name
+          color: #333
+        .email a
+          padding-left: 0
+          padding-right: 0
+      &.actions
+        padding-right: 0
+        text-align: right
+        a
+          background: #aaa
+          border-radius: 4px
+          -moz-border-radius: 4px
+          -webkit-border-radius: 4px
+          color: white
+          font-size: 85%
+          padding: 2px 8px 3px
+          text-decoration: none
+          &:hover
+            background-color: #888
+    a
+      padding: 0 5px
+  .toolbar
+    border-bottom: 1px solid #e5e5e5
+    margin: -10px -17px 20px
+    padding: 1px 15px
+    box-shadow: 0 3px 3px #f0f0f0
+    -moz-box-shadow: 0 3px 3px #f0f0f0
+    -webkit-box-shadow: 0 3px 3px #f0f0f0
+  .box
+    background-color: #f0f0f0
+    border: 1px solid #dcdcdc
+    border-radius: 8px
+    -moz-border-radius: 8px
+    -webkit-border-radius: 8px
+    margin: 15px 0 20px
+    padding: 0 15px
+    position: relative
+    button.edit
+      position: absolute
+      top: 12px
+      right: 12px
+      font-size: 13px
+      padding-left: 1em
+      padding-right: 1em
+    h3
+      margin-top: 13px
+    big.domain
+      color: #759
+    p.change
+      margin-top: -0.5em
+    p
+      label
+        display: inline-block
+        width: 10em
+    &#statistics
+      background-color: #def
+      border-color: #bbd5f0
+      overflow: auto
+      .graph
+        float: left
+        margin: 15px 25px 15px 0
+        width: 60%
+        #visitor_statistics
+          background: white
+          border: 5px solid #bbd5f0
+          border-radius: 5px
+          -moz-border-radius: 5px
+          -webkit-border-radius: 5px
+          width: 100%
+          height: 240px
+        p.views
+          font-size: 120%
+          margin: 15px 0 10px
+          text-align: center
+          a
+            padding: 5px
+            &.selected
+              font-weight: bold
+              color: black
+              text-decoration: none
+          span.separator
+            color: #def
+            border-right: 1px dashed #aac5e0
+            margin-left: -0.75em
+            padding: 4px 4px 7px
+      .large_statistics
+        float: left
+        width: 35%
+        margin-top: 30px
+        font-size: 130%
+        li
+          margin-bottom: 1em
+        big
+          font-family: Georgia, "Lucida Grande", Verdana, Helvetica, Arial, sans-serif
+          font-size: 200%
+        small
+          font-size: 80%
+          color: #9ab
+          display: block
+        a
+          color: #333
+          text-decoration: none
+          &:hover
+            text-decoration: underline
+            color: #2285cc
+    &#editor
+      margin-top: 0
+    &#images
+      background-color: #def
+      border-color: #bbd5f0
+      float: right
+      margin: 0 0 0 20px
+      width: 30%
+      p.instructions
+        color: #678
+        font-size: 90%
+        margin: -0.5em 0 1em
+      ul
+        border: 1px solid #999
+        background: white
+        display: block
+        padding: 0px 4px 4px
+        min-height: 96px
+        overflow-y: auto
+        li
+          display: inline
+          line-height: 52px
+          position: relative
+          img
+            vertical-align: -21px
+            cursor: move
+          a.delete
+            display: none
+            background: url(/images/trash_icon.png) no-repeat
+            width: 15px
+            height: 15px
+            position: absolute
+            margin-top: -15px
+            margin-left: 33px
+            span
+              display: none
+          &:hover
+            a.delete
+              display: block
+      fieldset
+        background-color: #c0deff
+        border-color: #a2c7f0
+      .buttons
+        margin: -10px 0 1em
+  #logo
+    img
+      background: #ddd
+      border: 4px solid #ccc
+      border-radius: 5px
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      padding: 1px
+      margin: 5px 0 0
+  #change_logo
+    span.logo_uploader
+      background: white
+      border: 1px solid #ddd
+      line-height: 60px
+      margin-right: 0.75em
+      padding: 15px
+      width: 250px
+  .pagination
+    font-size: 95%
+    text-align: right
+    a
+      padding: 4px 8px
+      margin: 0 -0.35em
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    span.current
+      color: white
+      background-color: #f60
+      padding: 4px 8px
+      border-radius: 4px
+      -moz-border-radius: 4px
+      -webkit-border-radius: 4px
+    span.prev_page, span.next_page
+      color: #999
+      &.disabled
+        padding: 4px 8px
+        margin: 0 -0.35em
+    .prev_page
+      &.disabled
+        display: none
+  .index_head
+    p
+      color: #555
+    .pagination
+      float: right
+  .index_head
+    margin-bottom: 1.5em
+  .index_foot
+    margin-top: 1.5em
+  .download
+    background: #e5e5e5
+    padding: 10px
+    border-radius: 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    clear: both
+    margin-top: 2em
+    text-align: center
+    h3
+      display: inline
+      font-size: 100%
+    ul
+      margin-left: 0.25em
+      display: inline
+    li
+      display: inline
+    a
+      background: #66aa6f
+      border-radius: 4px
+      -moz-border-radius: 4px
+      -webkit-border-radius: 4px
+      color: white
+      font-size: 90%
+      padding: 4px 10px 4px
+      text-decoration: none
+      &:hover
+        background-color: #77bb7f
+#footer
+  background: #f5f5f5
+  border-top: 1px solid #e5e5e5
+  color: #888
+  font-size: 90%
+  padding: 15px 20px
+  display: none

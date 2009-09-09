@@ -1,0 +1,29 @@
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content=>"text/html; charset=utf-8", "http-equiv"=>"Content-Type"}/
+    %title= [application_name, @title ].compact.uniq.join(": ")
+    %link{:href=>"/stylesheets/sass/application.sass", :rel=>"stylesheet", :type=>"text/css", :media=>"all"}/
+    %script{:src=>"/javascripts/prototype.js", :type=>"text/javascript"}
+    %script{:src=>"/javascripts/effects.js", :type=>"text/javascript"}
+    %script{:src=>"/javascripts/dragdrop.js", :type=>"text/javascript"}
+    %script{:src=>"/javascripts/controls.js", :type=>"text/javascript"}
+    %script{:src=>"/javascripts/application.js", :type=>"text/javascript"}
+    = yield :meta
+  %body
+    #header
+      .applinks
+        %p.account
+          = "Hi <strong>Jim Wilson</strong>! (#{ link_to 'Logout', '/logout/' })"
+        %ul<
+          %li{:class=>(@selected == :settings) ? "here" : nil}
+            = link_to "Settings", "/settings/"
+          %li
+            = link_to "View Teaser", "/teasers/show/", :class=>"view_teaser", :target=>"_blank"
+      = render :partial => "/layouts/navigation"
+    #content
+      - if content_for? :toolbar
+        .toolbar
+          = yield :toolbar
+      = yield
+    = render :partial => "/layouts/footer"

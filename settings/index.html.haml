@@ -1,0 +1,34 @@
+- @selected = :settings
+- @title = "Settings"
+
+.box
+  %h3 Personal Preferences
+  %button.edit{:onclick=>"window.location = '/settings/preferences/edit/'"} Edit
+  %p
+    %label Name
+    Jim Wilson
+  %p
+    %label Email
+    %span.email jim.wilson@gmail.com
+  %p
+    %label Password
+    %big &bull;&bull;&bull;&bull;&bull;
+
+.box
+  %h3 Account
+  %button.edit{:onclick=>"window.location = '/settings/account/edit/'"} Edit
+  %p
+    Introductory Plan (10-day free trial)
+  
+.box
+  %button.edit{:onclick=>"window.location = '/settings/domain/edit/'"} Edit
+  %h3 Domain
+  %p
+    %big
+      %span.url http://subdomain.announceitapp.com
+
+.box
+  %button.edit{:onclick=>"if (confirm('Are you sure you want to regenerate your API key?')) window.location = '/settings/api_key/regenerate'"} Regenerate
+  %h3 API Key
+  %p
+    00a2fa1411a574feb9f752501b680f823cfdaa84

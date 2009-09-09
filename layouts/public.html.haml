@@ -1,0 +1,15 @@
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content=>"text/html; charset=utf-8", "http-equiv"=>"Content-Type"}/
+    %title= [application_name, @title].compact.uniq.join(": ")
+    %link{:href=>"/stylesheets/sass/public.sass", :rel=>"stylesheet", :type=>"text/css", :media=>"all"}/
+  %body
+    #header
+      #logo
+        %a{:href=>"/home/"}
+          %img{:src=>"/images/logo.png", :width=>408, :height=>97, :alt=>"Announce It!!!", :title=>""}/
+    #content
+      %h1= @title
+      = yield
+    = render :partial => "/layouts/footer"

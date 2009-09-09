@@ -1,0 +1,39 @@
+- @title = "Super easy teaser pages"
+
+- content_for :head do
+  %p#headline
+    Generate and track interest in that product or idea you are working
+    on. All for free!
+  %p
+    %a.signup_link{:href=>"/signup/"} Sign Up Free!
+
+#screenshots
+  .screenshot.first
+    %img{:src=>"/images/teaser_page_screenshot.png", :width=>220, :height=>184, :alt=>""}/
+    %p Create a custom teaser page
+  .screenshot
+    %img{:src=>"/images/subscribers_screenshot.png", :width=>220, :height=>184, :alt=>""}/
+    %p Keep in touch with your subscribers
+  .screenshot.last
+    %img{:src=>"/images/dashboard_screenshot.png", :width=>220, :height=>184, :alt=>""}/
+    %p Track interest in your product or idea
+
+%table#features{:cellspacing=>0}
+  %tr
+    %td.first
+      %h3 Fully Customize Your Teaser Page
+      %p Choose from one of our professionally designed templates or use your own HTML, CSS, and images.
+    %td.last
+      %h3 Download Your Subscriber List
+      %p You can download your subscriber list at any time in CSV or Plain Text format.
+  %tr
+    %td.first
+      %h3 Use a Custom Domain Name
+      %p Use a subdomain on announceitapp.com or use your own domain name.
+    %td.last
+      %h3 Track Visitors and Subscribers
+      %p Keep tabs on the number of people visiting your teaser and the number who subscribe.
+
+- content_for :foot do
+  %p
+    %a.signup_link{:href=>"/signup/"} Sign Up Free!

@@ -1,0 +1,31 @@
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content=>"text/html; charset=utf-8", "http-equiv"=>"Content-Type"}/
+    %title= [application_name, @title ].compact.uniq.join(": ")
+    %link{:href=>"/stylesheets/sass/home.sass", :rel=>"stylesheet", :type=>"text/css", :media=>"all"}/
+    = yield :meta
+  %body
+    #header_wrapper
+      #header
+        #logo
+          %img{:src=>"/images/logo.png", :width=>408, :height=>97, :alt=>"Announce It!!!", :title=>""}/
+    #head_wrapper
+      #head
+        = yield :head
+    #content_wrapper
+      #content
+        = yield
+    #foot_wrapper
+      #foot
+        = yield :foot
+    #footer_wrapper
+      #footer
+        %p
+          = %{Copyright &copy; #{copyright_years}, <a href="http://recursivecreative.com">Recursive Creative, LLC.</a> All rights reserved.}
+          &nbsp;
+          %a{:href=>"/legal/terms/"} Terms of Use
+          &middot;
+          %a{:href=>"/legal/privacy/"} Privacy Policy
+          &middot;
+          %a{:href=>"mailto:us@recursivecreative.com"} Contact Us

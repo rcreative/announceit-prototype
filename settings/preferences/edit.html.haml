@@ -1,0 +1,35 @@
+- @selected = :settings
+- @title = "Preferences"
+
+%form{:action=>"/settings/", :method=>"post"}
+  %h1 Personal Preferences
+  
+  - if errors_on? :account
+    %p.message.error Oops! There were errors while processing this form. Please correct them before continuing.
+  
+  %fieldset
+    %p
+      %label{:for=>"name"} Name
+      %input.textbox{:name=>"name", :id=>"name", :type=>"text", :size=>33, :value=>""}/
+    %p
+      %label{:for=>"email"} Email
+      %input.textbox{:name=>"email", :id=>"email", :type=>"text", :size=>33}/
+    #password
+      %p
+        %label Password
+        %big &bull;&bull;&bull;&bull;&bull;
+        = link_to_function "Change", "Element.hide('password'); Element.show('change_password')", :class => "alt"
+    .set#change_password{:style => 'display:none'}
+      %p
+        %label{:for=>"password"} New Password
+        %input.textbox{:name=>"password", :id=>"password", :type=>"password", :size=>15}/
+      %p
+        %label{:for=>"password_confirmation"} Confirm Password
+        %input{:name=>"password_confirmation", :id=>"password_confirmation", :type=>"password", :size=>15}/
+        or
+        = link_to_function "Cancel", "Element.hide('change_password'); Element.show('password')", :class => "cancel"
+      .clear &nbsp;
+  .buttons
+    %input.button{:type=>"submit", :value=>"Save Changes"}/
+    or
+    = link_to "Cancel", "/settings/", :class => "cancel"

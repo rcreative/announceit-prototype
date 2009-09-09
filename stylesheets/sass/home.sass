@@ -1,0 +1,112 @@
+@import _reset.sass
+@import _base.sass
+
+body
+  color: #ccc
+  background: #2e2e2e
+  text-align: center
+  text-shadow: 1px 1px 1px #2e2e2e
+
+a
+  color: #ddd
+  padding: 2px
+  &:hover
+    background: #242424
+    color: white
+
+h1, h2, h3, h4, h5, h6
+  color: white
+  font-family: "Montara Std Gothic", "Trebuchet MS", "Lucida Grande", Verdana, Arial, sans-serif
+
+
+#header, #head, #content_wrapper, #foot, #footer
+  width: 826px
+  margin: 0 auto
+  text-align: left
+
+#header, #footer
+  text-align: center
+
+#header
+  padding: 20px 0
+
+#head_wrapper, #foot_wrapper
+  background: #242424
+  text-shadow: 1px 1px 1px #242424
+
+#head, #foot
+  a.signup_link
+    background: url(/images/signup_button.png) no-repeat
+    display: block
+    width: 238px
+    height: 57px
+    text-indent: -999em
+    &:hover
+      background: url(/images/signup_button_hover.png) no-repeat
+
+#head
+  padding: 20px 0
+  position: relative
+  #headline
+    background: url(/images/headline.png) no-repeat
+    width: 561px
+    height: 77px
+    text-indent: -999em
+  a.signup_link
+    position: absolute
+    right: 0
+    top: 40px
+
+#content
+  padding: 1px 30px
+  
+  #screenshots
+    margin-top: 25px
+    .screenshot
+      font-family: "Montara Std Gothic", "Trebuchet MS", "Lucida Grande", Verdana, Arial, sans-serif
+      color: #ffcf69
+      font-size: 180%
+      float: left
+      margin-right: 25px
+      text-align: center
+      width: 238px
+      &.last
+        margin-right: 0
+      img
+        border: 9px solid #434343
+        border-radius: 10px
+        -moz-border-radius: 10px
+        -webkit-border-radius: 10px
+      p
+        margin-top: 10px
+  table#features
+    border-top: 9px solid #434343
+    clear: both
+    font-size: 105%
+    td
+      width: 45%
+      &.first
+        padding-right: 10px
+      &.last
+        padding-left: 10px
+      h3
+        font-size: 140%
+        background: url(/images/dingbat.png) no-repeat 10px center
+        margin-top: 25px
+        margin-bottom: 5px
+      h3, p
+        padding-left: 45px
+      p
+        font-size: 110%
+        margin: 0
+
+#foot
+  margin-top: 20px
+  padding: 20px
+  text-align: center
+  a.signup_link
+    margin: 0 auto
+
+#footer
+  padding: 10px
+  

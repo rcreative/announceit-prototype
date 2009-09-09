@@ -1,0 +1,8 @@
+.sass-cache
+log/*
+db/*.sqlite3
+coverage
+tmp
+public/system
+public/stylesheets/*.css
+public/stylesheets/**/*.css
